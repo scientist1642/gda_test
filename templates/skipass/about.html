@@ -1,0 +1,11 @@
+{% extends 'skipass/base.html' %}
+{% load static %}
+
+{% block title %} skipass {% endblock %}
+
+{% block body_block %}
+<div class="hero-unit">
+      <p><strong>{{ boldmessage }} </strong></p>
+      <img src="{% static 'logo.jpg' %}"/>
+</div>
+{% endblock %}

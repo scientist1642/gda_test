@@ -1,0 +1,19 @@
+{% extends 'skipass/base.html' %}
+{% load static %}
+
+{% block title %} skipass {% endblock %}
+
+{% block body_block %}
+<div class="hero-unit">
+    <form class="form-signin span8" id="user_form" method="post" action="/skipass/login/">
+        {% csrf_token %}
+        <h2 class="form-signin-heading">რეგისტრაცია</h2>
+        მოხმ. სახელი <br/>
+        <input type="text" name="username" value="" size="50" /> </br>
+        პაროლი <br/>
+        <input type="password" name="password" value="" size="50" />
+        <br/>
+        <input class="btn btn-primary" type="submit" name="submit" value="შესვლა"/>
+    </form>
+</div>
+{% endblock %}

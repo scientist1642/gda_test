@@ -1,0 +1,21 @@
+{% extends 'skipass/base.html' %}
+{% load static %}
+
+{% block title %} skipass {% endblock %}
+
+{% block body_block %}
+<div class="hero-unit">
+       {%  if user.is_authenticated %}
+        <h2>გამარჯობა {{ user.username }}!</h2>
+        <p><strong> შეგიძლიათ შეამოწმოთ ბალანსის გვერდი </strong></p>
+       {% else %}
+         <h2>გთხოვთ შეხვიდეთ სისტემაში ან გაიაროთ რეგისტრაცია</h2>
+       {% endif %}
+
+        <img src="{% static 'kenny.jpg' %}"/>
+    <hr/>
+<button type="button" class="btn btn-primary btn-lg">Large button</button>
+<button type="button" class="btn btn-primary btn-lg">60 ლ-ორი დღე</button>
+</div>
+{% endblock %}
+

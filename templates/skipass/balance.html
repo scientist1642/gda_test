@@ -1,0 +1,39 @@
+{% extends 'skipass/base.html' %}
+{% load static %}
+
+{% block title %} skipass {% endblock %}
+
+{% block body_block %}
+<div class="hero-unit">
+      <img src="{% static 'logo.jpg' %}"/>
+      <p><strong>თქვენი ბარათის ნომერი: <span style="color:mediumvioletred"color> {{ profile.card_number }} </span></strong></p>
+      <p> თქვენ ბალანსზე არის <strong><span style="color:mediumvioletred"color> {{ profile.balance }} </span> </strong>
+          ლარი რაც საშუალებას მოგცემთ </br>
+          ისრიალოთ <strong><span style="color:mediumvioletred"color> {{ profile.days_left }} </span> </strong>
+          დღე </p>
+    <hr/>
+    <div class="form-group">
+
+
+    <form class="form-horizontal" id="pay_opt2" method="post" action="/skipass/balance/payment/">
+        {% csrf_token %}
+        <input type="hidden" name="amount" value="30"/>
+        <input type="hidden" name="days" value="1"/>
+        <input class="btn btn-primary" type="submit" name="submit" value="30 ლ-ერთი დღე"/>
+    </form>
+    <form class="form-horizontal" id="pay_opt1" method="post" action="/skipass/balance/payment/">
+        {% csrf_token %}
+        <input type="hidden" name="amount" value="60"/>
+        <input type="hidden" name="days" value="2"/>
+        <input class="btn btn-primary" type="submit" name="submit" value="60 ლ-ორი დღე"/>
+    </form>
+    <form class="form-horizontal" id="pay_opt3" method="post" action="/skipass/balance/payment/">
+        {% csrf_token %}
+        <input type="hidden" name="amount" value="90"/>
+        <input type="hidden" name="days" value="3"/>
+        <input class="btn btn-primary" type="submit" name="submit" value="90 ლ-სამი დღე"/>
+    </form>
+    </div>
+
+</div>
+{% endblock %}
