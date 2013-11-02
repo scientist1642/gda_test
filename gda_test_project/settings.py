@@ -5,7 +5,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 # My defined things
-PROJECT_PATH = os.getcwd()
+PROJECT_PATH = os.path.abspath(os.path.dirname(__name__))
 TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates')
 STATIC_PATH = os.path.join(PROJECT_PATH, 'static')
 DATABASE_PATH = os.path.join(PROJECT_PATH, 'skipass.db')

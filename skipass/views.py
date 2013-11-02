@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from skipass.models import  UserProfile
 import stripe
+import gda_test_project.settings
 
 def index(request):
     context = RequestContext(request)
